@@ -3,5 +3,16 @@
 {% block titulo %}Editar Libro{% endblock  %}
 
 {% block contenido %}
-    <h1>Editar Libro</h1>
+<div class="card">
+    <div class="card-header">
+        Editar Libro
+    </div>
+    <div class="card-body">
+        <h4 class="card-title">Datos Del Libro</h4>
+        
+        {% include 'libros/form.html' %}
+
+    </div>
+    
+</div>
 {% endblock  %}
