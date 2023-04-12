@@ -8,3 +8,7 @@ class Libro(models.Model):
 
     def __str__(self):
         return self.titulo
+    
+    def delete(self, using=None, keep_parents=False):
+        self.imagen.storage.delete(self.imagen.name)
+        super().delete()
