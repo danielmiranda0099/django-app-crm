@@ -23,17 +23,21 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr class="">
-                            <td scope="row">1</td>
-                            <td>El Hobbit</td>
-                            <td>Img.jpg</td>
-                            <td>Un Buen Libro</td>
-                            <td> 
-                                    <a name="" id="" class="btn btn-info" href="{% url 'editar' %}" role="button">Editar</a>
-                                    |   
-                                    <a name="" id="" class="btn btn-danger" href="#" role="button">Eliminar</a>
-                            </td>
-                        </tr>
+                        {% for libro in libros %}
+                            <tr class="">
+                                <td scope="row">{{ libro.id }}</td>
+                                <td>{{ libro.titulo }}</td>
+                                <td>
+                                    <img src="{{libro.imagen.url}}" height="100px" alt="">
+                                </td>
+                                <td>{{ libro.descripcion }}</td>
+                                <td> 
+                                        <a name="" id="" class="btn btn-info" href="{% url 'editar' %}" role="button">Editar</a>
+                                        |   
+                                        <a name="" id="" class="btn btn-danger" href="#" role="button">Eliminar</a>
+                                </td>
+                            </tr>
+                        {% endfor %}
                     </tbody>
                 </table>
             </div>
